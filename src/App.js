@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import CityList from './components/CityList';
 import './App.css';
+import 'typeface-roboto';
 
-function App() {
+
+const cities = [
+    {city: "Buenos Aires", country: "Argentina"},
+    {city: "Bogotá", country: "Colombia"},
+    {city: "Cordoba", country: "Argentina"}
+]
+
+const click = (city) => {
+    alert("Llega" + city)
+}
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CityList cities={cities} onClickCity={click} ></CityList>
     </div>
   );
 }
